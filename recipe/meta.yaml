@@ -41,7 +41,7 @@ test:
     - tests
     - setup.cfg
   requires:
-    - python >={{ python_min }}
+    - python {{ python_min }}
     - moto
     - pip
     - pytest
