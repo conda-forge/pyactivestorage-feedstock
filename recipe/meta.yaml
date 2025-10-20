@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "PyActiveStorage" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 8931b55898be7b8e317bc3264d3396005330aa1e5a24110dfb675daa83a3ea93
+  sha256: dd6854f297037ea8a65b2e3a4e031d2ff7924fce5caab972f0ea1ad3bf1441ce
 
 build:
   number: 0
@@ -27,7 +27,6 @@ requirements:
   run:
     - python >={{ python_min }}
     - pyfive >=0.5.0
-    - dask !=2024.8.0
     - fsspec
     - h5netcdf
     - netcdf4
@@ -42,7 +41,7 @@ test:
     - tests
     - setup.cfg
   requires:
-    - python >={{ python_min }}
+    - python {{ python_min }}
     - moto
     - pip
     - pytest
