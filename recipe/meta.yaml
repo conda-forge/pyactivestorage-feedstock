@@ -60,8 +60,8 @@ test:
 
 about:
   home: https://github.com/NCAS-CMS/PyActiveStorage
-  license: Apache-2.0
-  license_file: MIT
+  license: MIT
+  license_file: LICENSE
   summary: 'PyActiveStorage: provides a Python client to local or remote active storage (aka computational storage).'
   description: 'PyActiveStorage: shrink data transfers by applying data reductions straight in the storage unit.'
   doc_url: https://pyactivestorage.readthedocs.io
