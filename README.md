@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pyactivestorage
 
 Home: https://github.com/NCAS-CMS/PyActiveStorage
 
-Package license: Apache-2.0
+Package license: MIT
 
 Summary: PyActiveStorage: provides a Python client to local or remote active storage (aka computational storage).
 
@@ -19,11 +19,10 @@ Current build status
 ====================
 
 
-<table><tr><td>All platforms:</td>
+<table><tr>
+    <td>All platforms:</td>
     <td>
-      <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=26179&branchName=main">
-        <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyactivestorage-feedstock?branchName=main">
-      </a>
+      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
     </td>
   </tr>
 </table>
@@ -151,4 +150,5 @@ Feedstock Maintainers
 
 * [@davidhassell](https://github.com/davidhassell/)
 * [@valeriupredoi](https://github.com/valeriupredoi/)
+* [@varsiha-sothilingam](https://github.com/varsiha-sothilingam/)
 

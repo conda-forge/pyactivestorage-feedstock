@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "PyActiveStorage" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 6d280ae29a0923e9d959c419ad4dcfabe76dd0fc28af7116e0aab0e3cfb4300f
+  sha256: d0de8ff01cbc8365a168420ec9978ddd8136881c06a681ac5a31b4dba506b0b8
 
 build:
   number: 0
@@ -53,7 +53,7 @@ test:
   commands:
     - pip check
     # connection refused (for s3); slow tests; fails for Win
-    - pytest -n 2 -m "not slow" --ignore=tests/s3_exploratory/  --ignore=tests/test_real_https.py --ignore=tests/test_real_s3.py --ignore=tests/unit/test_mock_s3.py 
+    - pytest -n 2 -m "not slow" --ignore=tests/s3_exploratory/  --ignore=tests/test_real_https.py --ignore=tests/test_real_s3.py --ignore=tests/unit/test_mock_s3.py
     - python -c "from activestorage import Active"
   imports:
     - activestorage
