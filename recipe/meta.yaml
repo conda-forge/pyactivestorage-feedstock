@@ -1,4 +1,3 @@
-#  {% set python_min = "3.10" %}  will have to change to 3.11 soon
 {% set name = "PyActiveStorage" %}
 {% set version = "0.8.0" %}
 
