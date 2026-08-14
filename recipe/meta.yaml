@@ -19,13 +19,13 @@ build:
 
 requirements:
   host:
-    - python  # {{ python_min }}
+    - python {{ python_min }}
     - pip !=21.3
     - pytest-runner
     - setuptools >=80
     - setuptools_scm >=8
   run:
-    - python  #  >={{ python_min }}
+    - python >={{ python_min }}
     - pyfive >=1.1.1
     - cbor2
     - fsspec
@@ -42,7 +42,7 @@ test:
     - tests
     - setup.cfg
   requires:
-    - python  #  {{ python_min }}
+    - python {{ python_min }}
     - moto
     - pip
     - pytest
