@@ -1,4 +1,4 @@
-{% set python_min = "3.10" %}
+#  {% set python_min = "3.10" %}  will have to change to 3.11 soon
 {% set name = "PyActiveStorage" %}
 {% set version = "0.8.0" %}
 
@@ -19,13 +19,13 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python  # {{ python_min }}
     - pip !=21.3
     - pytest-runner
     - setuptools >=80
     - setuptools_scm >=8
   run:
-    - python >={{ python_min }}
+    - python  #  >={{ python_min }}
     - pyfive >=1.1.1
     - cbor2
     - fsspec
@@ -42,13 +42,14 @@ test:
     - tests
     - setup.cfg
   requires:
-    - python {{ python_min }}
+    - python  #  {{ python_min }}
     - moto
     - pip
     - pytest
     - pytest-cov >=2.10.1
     - pytest-html !=2.1.0
     - pytest-metadata >=1.5.1
+    - pytest-mock
     - pytest-xdist
   commands:
     - pip check
