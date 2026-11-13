@@ -1,5 +1,5 @@
 {% set name = "PyActiveStorage" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name|lower }}-{{ version }}.tar.gz
-  sha256: 87169796e12866960d3f43a7d93553e3ad969472b1fc40ca78021146b6f67e30
+  sha256: 1443a3dc0e185823ae9628e916192b0f7d14243d4de71d4c4c98f50795075602
 
 build:
   number: 0
@@ -25,10 +25,11 @@ requirements:
     - setuptools_scm >=8
   run:
     - python >={{ python_min }}
-    - pyfive >=1.1.1
+    - pyfive >=1.2.0
     - cbor2
     - fsspec
     - h5netcdf
+    - h5py
     - netcdf4
     - numcodecs >=0.12
     - numpy >=2
