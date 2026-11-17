@@ -11,7 +11,7 @@ Summary: PyActiveStorage: provides a Python client to local or remote active sto
 
 Development: https://github.com/NCAS-CMS/PyActiveStorage
 
-Documentation: https://pyactivestorage.readthedocs.io
+Documentation: https://pyactivestorage.readthedocs.io/
 
 PyActiveStorage: shrink data transfers by applying data reductions straight in the storage unit.
 
