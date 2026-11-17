@@ -27,7 +27,7 @@ requirements:
     - setuptools >=80
     - setuptools_scm >=8
   run:
-    - python >=${{ python_min }}.*
+    - python >=${{ python_min }}
     - pyfive >=1.2.0
     - cbor2
     - fsspec
