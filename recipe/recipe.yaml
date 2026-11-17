@@ -42,12 +42,15 @@ requirements:
 
 tests:
   - python:
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
       imports:
         - activestorage
       pip_check: true
-  - script:
-      - pytest -n 2 -m "not slow" --ignore=tests/s3_exploratory/ --ignore=tests/test_real_https.py --ignore=tests/test_real_s3.py --ignore=tests/unit/test_mock_s3.py
-      - python -c "from activestorage import Active"
+  - files:
+      source:
+        - tests
     requirements:
       run:
         - python ${{ python_min }}.*
@@ -59,6 +62,9 @@ tests:
         - pytest-metadata >=1.5.1
         - pytest-mock
         - pytest-xdist
+    script:
+      - pytest -n 2 -m "not slow" --ignore=tests/s3_exploratory/ --ignore=tests/test_real_https.py --ignore=tests/test_real_s3.py --ignore=tests/unit/test_mock_s3.py
+      - python -c "from activestorage import Active"
 
 about:
   homepage: https://github.com/NCAS-CMS/PyActiveStorage
