@@ -1,0 +1,80 @@
+
+schema_version: 1
+
+context:
+  name: pyactivestorage
+  version: "0.8.1"
+  python_min: "3.10"
+
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/PyActiveStorage/pyactivestorage-${{ version }}.tar.gz
+  sha256: 1443a3dc0e185823ae9628e916192b0f7d14243d4de71d4c4c98f50795075602
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+  #VS to CHECK
+  host:
+    - python ${{ python_min }}.*
+    - pip !=21.3
+    - pytest-runner
+    - setuptools >=80
+    - setuptools_scm >=8
+  run:
+    - python >=${{ python_min }}
+    - pyfive >=1.2.0
+    - cbor2
+    - fsspec
+    - h5netcdf
+    - h5py
+    - netcdf4
+    - numcodecs >=0.12
+    - numpy >=2
+    - requests
+    - s3fs >=2024.2.0
+    - ujson
+
+tests:
+  - python:
+      imports:
+        - activestorage
+      pip_check: true
+  - script:
+      - pytest -n 2 -m "not slow" --ignore=tests/s3_exploratory/ --ignore=tests/test_real_https.py --ignore=tests/test_real_s3.py --ignore=tests/unit/test_mock_s3.py
+      - python -c "from activestorage import Active"
+    requirements:
+      run:
+        - python ${{ python_min }}
+        - moto
+        - pip
+        - pytest
+        - pytest-cov >=2.10.1
+        - pytest-html !=2.1.0
+        - pytest-metadata >=1.5.1
+        - pytest-mock
+        - pytest-xdist
+
+about:
+  homepage: https://github.com/NCAS-CMS/PyActiveStorage
+  license: MIT
+  license_file: LICENSE
+  summary: "PyActiveStorage: provides a Python client to local or remote active storage (aka computational storage)."
+  description: "PyActiveStorage: shrink data transfers by applying data reductions straight in the storage unit."
+  documentation: https://pyactivestorage.readthedocs.io
+  repository: https://github.com/NCAS-CMS/PyActiveStorage
+
+extra:
+  recipe-maintainers:
+    - varsiha-sothilingam
+    - davidhassell
+    - valeriupredoi
+
