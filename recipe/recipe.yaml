@@ -4,7 +4,7 @@ schema_version: 1
 context:
   name: pyactivestorage
   version: "0.8.1"
-  python_min: "3.10"
+  python_min: "3.11"
 
 package:
   name: ${{ name }}
@@ -20,9 +20,6 @@ build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
-  build:
-    - ${{ compiler('c') }}
-  #VS to CHECK
   host:
     - python ${{ python_min }}.*
     - pip !=21.3
@@ -77,4 +74,3 @@ extra:
     - varsiha-sothilingam
     - davidhassell
     - valeriupredoi
-
